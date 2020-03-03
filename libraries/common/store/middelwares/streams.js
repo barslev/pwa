@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 import { UIEvents } from '@shopgate/pwa-core';
 
 export const mainSubject = new Subject();

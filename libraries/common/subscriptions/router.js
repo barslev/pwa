@@ -1,3 +1,4 @@
+import {delay} from 'rxjs/operators'
 import queryString from 'query-string';
 import {
   router,
@@ -210,7 +211,7 @@ export default function routerSubscriptions(subscribe) {
    * Without it the store would show that the user is still not
    * logged in during the upcoming navigate() action.
    */
-  const redirectUser$ = userDidLogin$.delay(100);
+  const redirectUser$ = userDidLogin$.pipe(delay(100));
 
   subscribe(redirectUser$, ({ action, dispatch }) => {
     if (appConfig.webCheckoutShopify === null) {
