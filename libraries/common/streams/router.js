@@ -1,4 +1,4 @@
-import {filter} from 'rxjs/operators'
+import { filter } from 'rxjs/operators'
 import { main$ } from './main';
 import {
   NAVIGATE,
@@ -12,32 +12,38 @@ import {
 /**
  * @type {Observable}
  */
-export const navigate$ = main$.pipe(filter(({ action }) => action.type === NAVIGATE));
+export const navigate$ = main$.pipe(
+  filter(({ action }) => action.type === NAVIGATE));
 
 /**
  * @type {Observable}
  */
-export const routeWillEnter$ = main$.pipe(filter(({ action }) => action.type === ROUTE_WILL_ENTER));
+export const routeWillEnter$ = main$.pipe(
+  filter(({ action }) => action.type === ROUTE_WILL_ENTER));
 
 /**
  * @type {Observable}
  */
-export const routeDidEnter$ = main$.pipe(filter(({ action }) => action.type === ROUTE_DID_ENTER));
+export const routeDidEnter$ = main$.pipe(
+  filter(({ action }) => action.type === ROUTE_DID_ENTER));
 
 /**
  * @type {Observable}
  */
-export const routeWillLeave$ = main$.pipe(filter(({ action }) => action.type === ROUTE_WILL_LEAVE));
+export const routeWillLeave$ = main$.pipe(
+  filter(({ action }) => action.type === ROUTE_WILL_LEAVE));
 
 /**
  * @type {Observable}
  */
-export const routeDidLeave$ = main$.pipe(filter(({ action }) => action.type === ROUTE_DID_LEAVE));
+export const routeDidLeave$ = main$.pipe(
+  filter(({ action }) => action.type === ROUTE_DID_LEAVE));
 
 /**
  * @type {Observable}
  */
-export const routeDidUpdate$ = main$.pipe(filter(({ action }) => action.type === ROUTE_DID_UPDATE));
+export const routeDidUpdate$ = main$.pipe(
+  filter(({ action }) => action.type === ROUTE_DID_UPDATE));
 
 /**
  * @type {Observable}

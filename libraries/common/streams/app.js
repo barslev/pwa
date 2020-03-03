@@ -1,4 +1,4 @@
-import {filter, map} from 'rxjs/operators'
+import { filter, map } from 'rxjs/operators'
 import { getCurrentRoute } from '../selectors/router';
 import {
   APP_DID_START,
@@ -12,18 +12,22 @@ import { main$ } from './main';
  * Gets triggered before the app starts.
  * @type {Observable}
  */
-export const appWillStart$ = main$.pipe(filter(({ action }) => action.type === APP_WILL_START));
+export const appWillStart$ = main$.pipe(
+  filter(({ action }) => action.type === APP_WILL_START));
 
 /**
  * Gets triggered when the app starts.
  * @type {Observable}
  */
-export const appDidStart$ = main$.pipe(filter(({ action }) => action.type === APP_DID_START));
+export const appDidStart$ = main$.pipe(
+  filter(({ action }) => action.type === APP_DID_START));
 
 /**
  * Emits when the PWA appeared again after navigating back from a legacy page.
  */
-export const pwaDidAppear$ = main$.pipe(filter(({ action }) => action.type === PWA_DID_APPEAR), map(params => ({
+export const pwaDidAppear$ = main$.pipe(
+  filter(({ action }) => action.type === PWA_DID_APPEAR),
+  map(params => ({
     ...params,
     action: {
       ...params.action,
@@ -34,7 +38,9 @@ export const pwaDidAppear$ = main$.pipe(filter(({ action }) => action.type === P
 /**
  * Emits when the PWA disappears
  */
-export const pwaDidDisappear$ = main$.pipe(filter(({ action }) => action.type === PWA_DID_DISAPPEAR), map(params => ({
+export const pwaDidDisappear$ = main$.pipe(
+  filter(({ action }) => action.type === PWA_DID_DISAPPEAR),
+  map(params => ({
     ...params,
     action: {
       ...params.action,

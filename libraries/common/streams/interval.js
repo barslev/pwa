@@ -1,4 +1,4 @@
-import {interval} from 'rxjs'
+import { interval } from 'rxjs'
 
 /**
  * Gets triggered every second.

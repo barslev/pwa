@@ -1,4 +1,4 @@
-import {from} from 'rxjs'
+import { from } from 'rxjs'
 import { mainSubject } from '../store/middelwares/streams';
 
 /**
