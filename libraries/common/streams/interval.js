@@ -1,8 +1,7 @@
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
+import {interval} from 'rxjs'
 
 /**
  * Gets triggered every second.
  * @type {Observable}
  */
-export const second$ = Observable.interval(1000);
+export const second$ = interval(1000);
