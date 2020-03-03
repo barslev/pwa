@@ -1,4 +1,4 @@
-import {delay} from 'rxjs/operators'
+import { delay } from 'rxjs/operators'
 import queryString from 'query-string';
 import {
   router,
